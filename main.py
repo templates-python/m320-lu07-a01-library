@@ -15,10 +15,12 @@ def main():
     ursula = Customer('Ursula', pit, library)
     library.print_customers()
 
-    # pit kauft 5 neue Bücher, die er der Bibliothek beifügt.
-    # Danach wird das Inventar der Bibliothek ausgegeben.
-    # Teil 2
-    # TODO
+    pit.buy_new_book(title='Ich bin dann mal weg', isbn='3-345-678')
+    pit.buy_new_book(title='im Westen nichts neues', isbn='6-444-856')
+    pit.buy_new_book(title='Das Omen', isbn='3-3345-678-X')
+    pit.buy_new_book(title='Harry Potter, die neue Welt', isbn='3-4321-334')
+    pit.buy_new_book(title='die schönsten Zugreisen', isbn='3-2123-554')
+    library.print_inventory()
 
     # Ursula und Moritz leihen sich ein Buch aus
     # Teil 3

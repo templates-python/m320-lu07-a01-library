@@ -1,4 +1,5 @@
 """ Provides the class Librarian for the Library application."""
+from book import Book
 from library import Library
 
 
@@ -38,7 +39,8 @@ class Librarian:
         :param title: The title of the new book.
         :param isbn:  The ISBN-number of the new book.
         """
-        pass
+        book = Book(title, isbn)
+        book.location = self._library.add_book(book)
 
     def lend_book_by_title(self, title):
         """
