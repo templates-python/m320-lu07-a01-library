@@ -77,5 +77,6 @@ class Librarian:
         Reminds a customer, that a book is overdue.
         :param name: The name of the customer to be reminded.
         """
-
+        customer = self._library.search_customer(name)
+        customer.reminded = True
         print(f'Erinnerung für {name}: Dein Buch ist überfällig')

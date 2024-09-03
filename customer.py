@@ -83,12 +83,11 @@ class Customer:
         Gets the status of the reminder.
         :return: Status der Mahnung true/false
         """
-        # TODO
+        return self._reminded
 
     @reminded.setter
     def reminded(self, value):
         """
         Sets the status of the reminder.
         """
-
-        print(f'Das Buch "{self._book.title}" ist noch ausstehend')
+        self._reminded = value
