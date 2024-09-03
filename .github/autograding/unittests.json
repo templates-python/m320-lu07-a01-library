@@ -1,0 +1,8 @@
+[
+  {
+    "name": "test_main",
+    "function": "test_main",
+    "timeout": 10,
+    "points": 5
+  }
+]
