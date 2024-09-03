@@ -1,5 +1,6 @@
 import pytest
 
+from book import Book
 from librarian import Librarian
 from library import Library
 
@@ -29,6 +30,12 @@ def test_lend_unknown_book(capsys, sample_library, pit):
     assert book is None
     captured = capsys.readouterr()
     assert captured.out == 'Das angefragte Buch ist nicht vorhanden\n'
+
+def test_get_a_book_from_customer(sample_library, pit):
+    book = Book(title='Test', isbn='ABC-789')
+    pit.take_back_book(book)
+    book = sample_library.search_book_by_title('Test')
+    assert book.title == 'Test'
 
 @pytest.fixture
 def sample_library():

@@ -26,9 +26,8 @@ def main():
     moritz.borrow_book_by_title('Ich bin dann mal weg')
     library.print_inventory()
 
-    # Ursula bringt ihr Buch zurück
-    # Teil 4
-    # TODO
+    ursula.bring_back_book()
+    library.print_inventory()
 
     # Moritz wird gemahnt
     # Teil 5

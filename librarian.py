@@ -62,7 +62,7 @@ class Librarian:
         Takes back a book and returns it to the library.
         :param borrowed_book: The book given back by the customer.
         """
-        pass
+        self._library.reshelve_book(borrowed_book)
 
     def remove_book(self, title):
         """
