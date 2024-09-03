@@ -29,17 +29,11 @@ def main():
     ursula.bring_back_book()
     library.print_inventory()
 
-    # Moritz wird gemahnt
-    # Teil 5
-    # TODO
+    pit.remind_customer('Moritz')
+    library.print_inventory()
 
     # Pit löscht ein Buch aus der Bibliothek
     # TODO
-
-    # Ursula will ein Buch, das es nicht gibt.
-    # TODO
-
-    pass
 
 
 if __name__ == '__main__':
