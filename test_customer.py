@@ -32,6 +32,14 @@ def test_reminded(customer_max):
     assert customer_max.reminded is True
 
 
+def test_bring_back_a_book( customer_max, sample_library, pit):
+    pit.buy_new_book('Test', 'ABC-123')
+    customer_max.borrow_book_by_title('Test')
+    customer_max.bring_back_book()
+    book = sample_library.search_book_by_title('Test')
+    assert book.title == 'Test'
+    assert customer_max.book is None
+
 @pytest.fixture
 def sample_library():
     return Library()

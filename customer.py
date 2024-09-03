@@ -58,8 +58,9 @@ class Customer:
         Returns the book to the librarian.
         The reference to the book will be set to None.
         """
-
         print(f'{self.name} hat das Buch "{self.book.title}" zurückgebracht')
+        self._librarian.take_back_book(self._book)
+        self._book = None
 
     @property
     def name(self):
