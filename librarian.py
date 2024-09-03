@@ -49,7 +49,13 @@ class Librarian:
         :param title: The title of the requested book.
         :return: book-object or None=not dound
         """
-        pass
+        book = self._library.search_book_by_title(title)
+        if book is None:
+            print('Das angefragte Buch ist nicht vorhanden')
+        else:
+            location = book.location
+            book = self._library.lend_book(location)
+        return book
 
     def take_back_book(self, borrowed_book):
         """

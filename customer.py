@@ -49,8 +49,9 @@ class Customer:
 
         :param title: The title of the book.
         """
-
-        print(f'{self.name} hat das Buch "{self.book.title}" erhalten.')
+        self._book = self._librarian.lend_book_by_title(title)
+        if self._book is not None:
+            print(f'{self.name} hat das Buch "{self.book.title}" erhalten.')
 
     def bring_back_book(self):
         """

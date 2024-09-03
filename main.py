@@ -22,9 +22,9 @@ def main():
     pit.buy_new_book(title='die schönsten Zugreisen', isbn='3-2123-554')
     library.print_inventory()
 
-    # Ursula und Moritz leihen sich ein Buch aus
-    # Teil 3
-    # TODO
+    ursula.borrow_book_by_title('Das Omen')
+    moritz.borrow_book_by_title('Ich bin dann mal weg')
+    library.print_inventory()
 
     # Ursula bringt ihr Buch zurück
     # Teil 4
