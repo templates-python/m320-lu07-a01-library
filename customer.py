@@ -29,7 +29,11 @@ class Customer:
         :param librarian: A reference to the librarian.
         :param library: A reference to the library.
         """
-        pass
+        self._name = name
+        self._reminded = False
+        self._librarian = librarian
+        self._book = None
+        library.add_customer(self)
 
     def __str__(self):
         """
@@ -55,7 +59,6 @@ class Customer:
         """
 
         print(f'{self.name} hat das Buch "{self.book.title}" zurückgebracht')
-
 
     @property
     def name(self):
@@ -88,5 +91,3 @@ class Customer:
         """
 
         print(f'Das Buch "{self._book.title}" ist noch ausstehend')
-
-

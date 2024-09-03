@@ -28,7 +28,8 @@ class Librarian:
         :param name: The full name of this librarian.
         :param library: A reference to the library.
         """
-        pass
+        self._name = name
+        self._library = library
 
     def buy_new_book(self, title, isbn):
         """
