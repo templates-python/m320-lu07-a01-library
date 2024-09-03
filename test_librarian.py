@@ -42,6 +42,7 @@ def test_get_a_book_from_customer(sample_library, pit):
     book = sample_library.search_book_by_title('Test')
     assert book.title == 'Test'
 
+
 def test_remind_customer(sample_library, pit, customer_max):
     pit.buy_new_book('Test Titel', 'ABC-123')
     book = customer_max.borrow_book_by_title('Test Titel')
@@ -49,13 +50,24 @@ def test_remind_customer(sample_library, pit, customer_max):
     assert customer_max.reminded is True
 
 
+def test_remove_book(sample_library, pit):
+    pit.buy_new_book('Test Titel', 'ABC-123')
+    book = sample_library.search_book_by_title('Test Titel')
+    assert book.title == 'Test Titel'
+    pit.remove_book('Test Titel')
+    book = sample_library.search_book_by_title('Test Titel')
+    assert book is None
+
+
 @pytest.fixture
 def sample_library():
     return Library()
 
+
 @pytest.fixture
 def customer_max(pit, sample_library):
     return Customer('Max', pit, sample_library)
+
 
 @pytest.fixture
 def pit(sample_library):

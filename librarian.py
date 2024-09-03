@@ -71,6 +71,8 @@ class Librarian:
         :raise: LookupError when there is no book with the specified title.
         """
         print(f'\n---\nentferne Buch "{title}"')
+        book = self._library.search_book_by_title(title)
+        self._library.remove_book(book)
 
     def remind_customer(self, name):
         """
