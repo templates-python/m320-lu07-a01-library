@@ -87,6 +87,6 @@ class Customer:
         Sets the status of the reminder.
         """
 
-        print(f'Das Buch "{self._book.title}" ist noch ausstehend')
+        pass
 
 
