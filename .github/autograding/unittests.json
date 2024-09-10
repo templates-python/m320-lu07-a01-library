@@ -1,8 +1,92 @@
 [
   {
-    "name": "test_main",
-    "function": "test_main",
+    "name": "test_init",
+    "function": "test_init",
     "timeout": 10,
-    "points": 5
+    "points": 1
+  },
+  {
+    "name": "test_borrow_book_by_title",
+    "function": "test_borrow_book_by_title",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_borrow_unknown",
+    "function": "test_borrow_unknown",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_reminded",
+    "function": "test_reminded",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_bring_back_a_book",
+    "function": "test_bring_back_a_book",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_init",
+    "function": "test_init",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_buy_new_book",
+    "function": "test_buy_new_book",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_lend_book_by_title",
+    "function": "test_lend_book_by_title",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_lend_unknown_book",
+    "function": "test_lend_unknown_book",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_get_a_book_from_customer",
+    "function": "test_get_a_book_from_customer",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_remind_customer",
+    "function": "test_remind_customer",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_remove_book",
+    "function": "test_remove_book",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_add_and_print_customers",
+    "function": "test_add_and_print_customers",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_search_customer",
+    "function": "test_search_customer",
+    "timeout": 10,
+    "points": 1
+  },
+  {
+    "name": "test_search_customer_failed",
+    "function": "test_search_customer_failed",
+    "timeout": 10,
+    "points": 1
   }
 ]
