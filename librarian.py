@@ -1,5 +1,5 @@
 """ Provides the class Librarian for the Library application."""
-from library import Library
+from library import Library, BookNotFoundError
 from book import Book
 
 
