@@ -11,6 +11,15 @@ def test_init(sample_library):
     assert sample_library.search_customer('Hanna') == hanna
 
 
+def test_no_library_attribute_stored(sample_library):
+    """Test that Customer constructor does not store library as _library attribute."""
+    customer = Customer('TestCustomer', None, sample_library)
+    # Verify that the customer does not have a _library attribute
+    assert not hasattr(customer, '_library')
+    # Verify the customer is properly registered with the library
+    assert sample_library.search_customer('TestCustomer') == customer
+
+
 def test_borrow_book_by_title(customer_max, pit):
     pit.buy_new_book('Test Titel', 'ABC-123')
     customer_max.borrow_book_by_title('Test Titel')

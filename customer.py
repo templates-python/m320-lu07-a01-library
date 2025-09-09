@@ -29,7 +29,12 @@ class Customer:
         :param librarian: A reference to the librarian.
         :param library: A reference to the library.
         """
-        pass
+        self._name = name
+        self._librarian = librarian
+        self._reminded = False
+        self._book = None
+        # Register the customer with the library, but don't store library reference
+        library.add_customer(self)
 
     def __str__(self):
         """
@@ -79,14 +84,13 @@ class Customer:
         Gets the status of the reminder.
         :return: Status der Mahnung true/false
         """
-        # TODO
+        return self._reminded
 
     @reminded.setter
     def reminded(self, value):
         """
         Sets the status of the reminder.
         """
-
-        pass
+        self._reminded = value
 
 
