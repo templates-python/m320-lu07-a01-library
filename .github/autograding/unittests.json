@@ -88,5 +88,11 @@
     "function": "test_search_customer_failed",
     "timeout": 10,
     "points": 1
+  },
+  {
+    "name": "test_constructor_does_not_store_library_attribute",
+    "function": "test_constructor_does_not_store_library_attribute",
+    "timeout": 10,
+    "points": 1
   }
 ]
