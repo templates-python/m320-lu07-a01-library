@@ -40,6 +40,21 @@ def test_bring_back_a_book( customer_max, sample_library, pit):
     assert book.title == 'Test'
     assert customer_max.book is None
 
+
+def test_constructor_does_not_store_library_attribute(sample_library, pit):
+    """Test that the customer constructor does not create a _library attribute.
+    
+    Even though the constructor receives a library parameter to register the customer,
+    it should not store the library as an instance attribute.
+    """
+    customer = Customer('Test Customer', pit, sample_library)
+    
+    # Verify the customer was registered with the library
+    assert sample_library.search_customer('Test Customer') == customer
+    
+    # Verify the customer does NOT have a _library attribute
+    assert not hasattr(customer, '_library')
+
 @pytest.fixture
 def sample_library():
     return Library()
