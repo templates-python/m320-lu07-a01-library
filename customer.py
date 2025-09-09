@@ -29,7 +29,11 @@ class Customer:
         :param librarian: A reference to the librarian.
         :param library: A reference to the library.
         """
-        pass
+        self._name = name
+        self._librarian = librarian
+        self._book = None
+        self._reminded = False
+        library.add_customer(self)
 
     def __str__(self):
         """
@@ -45,16 +49,20 @@ class Customer:
 
         :param title: The title of the book.
         """
-
-        print(f'{self.name} hat das Buch "{self.book.title}" erhalten.')
+        book = self._librarian.lend_book_by_title(title)
+        if book:
+            self._book = book
+            print(f'{self.name} hat das Buch "{self.book.title}" erhalten.')
 
     def bring_back_book(self):
         """
         Returns the book to the librarian.
         The reference to the book will be set to None.
         """
-
-        print(f'{self.name} hat das Buch "{self.book.title}" zurückgebracht')
+        if self._book:
+            print(f'{self.name} hat das Buch "{self.book.title}" zurückgebracht')
+            self._librarian.take_back_book(self._book)
+            self._book = None
 
 
     @property
@@ -79,14 +87,13 @@ class Customer:
         Gets the status of the reminder.
         :return: Status der Mahnung true/false
         """
-        # TODO
+        return self._reminded
 
     @reminded.setter
     def reminded(self, value):
         """
         Sets the status of the reminder.
         """
-
-        pass
+        self._reminded = value
 
 
