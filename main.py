@@ -1,5 +1,9 @@
 """ Provides the main routine for the Library application."""
 
+from library import Library
+from librarian import Librarian  
+from customer import Customer
+
 
 def main():
     """
@@ -8,7 +12,11 @@ def main():
     print('Bibliotheks-Anwendung\n=====================\n')
     # Objekte erzeugen und die Kundenliste ausgeben.
     # Teil 1
-    # TODO
+    library = Library()
+    pit = Librarian('Pit', library)
+    moritz = Customer('Moritz', pit, library)
+    ursula = Customer('Ursula', pit, library)
+    library.print_customers()
 
     # pit kauft 5 neue Bücher, die er der Bibliothek beifügt.
     # Danach wird das Inventar der Bibliothek ausgegeben.

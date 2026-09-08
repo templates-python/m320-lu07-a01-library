@@ -1,5 +1,6 @@
 """ Provides the class Librarian for the Library application."""
-from library import Library
+from library import Library, BookNotFoundError
+from book import Book
 
 
 class Librarian:
@@ -28,7 +29,8 @@ class Librarian:
         :param name: The full name of this librarian.
         :param library: A reference to the library.
         """
-        pass
+        self._name = name
+        self._library = library
 
     def buy_new_book(self, title, isbn):
         """
@@ -37,7 +39,9 @@ class Librarian:
         :param title: The title of the new book.
         :param isbn:  The ISBN-number of the new book.
         """
-        pass
+        book = Book(title, isbn)
+        location = self._library.add_book(book)
+        book.location = location
 
     def lend_book_by_title(self, title):
         """
@@ -46,14 +50,19 @@ class Librarian:
         :param title: The title of the requested book.
         :return: book-object or None=not dound
         """
-        pass
+        book = self._library.search_book_by_title(title)
+        if book:
+            return self._library.lend_book(book.location)
+        else:
+            print('Das angefragte Buch ist nicht vorhanden')
+            return None
 
     def take_back_book(self, borrowed_book):
         """
         Takes back a book and returns it to the library.
         :param borrowed_book: The book given back by the customer.
         """
-        pass
+        self._library.reshelve_book(borrowed_book)
 
     def remove_book(self, title):
         """
@@ -62,11 +71,18 @@ class Librarian:
         :raise: LookupError when there is no book with the specified title.
         """
         print(f'\n---\nentferne Buch "{title}"')
+        book = self._library.search_book_by_title(title)
+        if book:
+            self._library.remove_book(book)
+        else:
+            raise LookupError
 
     def remind_customer(self, name):
         """
         Reminds a customer, that a book is overdue.
         :param name: The name of the customer to be reminded.
         """
-
+        customer = self._library.search_customer(name)
+        if customer:
+            customer.reminded = True
         print(f'Erinnerung für {name}: Dein Buch ist überfällig')

@@ -2,6 +2,14 @@
 import random
 
 
+class BookNotFoundError(Exception):
+    """Exception raised when a book is not found in the library."""
+    
+    def __init__(self, message="Das angefragte Buch ist nicht vorhanden"):
+        self.message = message
+        super().__init__(self.message)
+
+
 class Library:
     """
     Defines the library that provides informations about the stored books.
