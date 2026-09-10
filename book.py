@@ -19,9 +19,9 @@ class Book:
         the shelf in the library this book is placed upon, will be assigned by the librarian
     """
 
-    _title: str
-    _isbn: str
-    _location: str = field(init=False)  # will be assigned by the librarian
+    title: str
+    isbn: str
+    location: str = field(init=False)  # will be assigned by the librarian
 
     def __post_init__(self):
         self._location = ''  # Initialize location to an empty string
